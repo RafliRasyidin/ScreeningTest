@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "ABC Event",
+    "date": "01 Jan 2021",
+    "image": "@drawable/img_webinar"
+  },
+  {
+    "id": 2,
+    "name": "Ngoding Event",
+    "date": "02 Feb 2021",
+    "image": "@drawable/img_webinar"
+  },
+  {
+    "id": 3,
+    "name": "Android Developer Event",
+    "date": "03 Mar 2021",
+    "image": "@drawable/img_webinar"
+  },
+  {
+    "id": 4,
+    "name": "Webinar Android Event",
+    "date": "06 Jun 2021",
+    "image": "@drawable/img_webinar"
+  },
+  {
+    "id": 5,
+    "name": "UI/UX Event",
+    "date": "12 Jul 2021",
+    "image": "@drawable/img_webinar"
+  },
+  {
+    "id": 6,
+    "name": "Mobile Development Event",
+    "date": "11 Nov 2021",
+    "image": "@drawable/img_webinar"
+  }
+]

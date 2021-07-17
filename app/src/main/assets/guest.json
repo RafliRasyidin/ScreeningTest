@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Andi",
+    "birthdate": "2014-01-01",
+    "image": "@drawable/user1"
+  },
+  {
+    "id": 2,
+    "name": "Budi",
+    "birthdate": "2014-02-02",
+    "image": "@drawable/user2"
+  },
+  {
+    "id": 3,
+    "name": "Charlie",
+    "birthdate": "2014-03-03",
+    "image": "@drawable/user3"
+  },
+  {
+    "id": 4,
+    "name": "Dede",
+    "birthdate": "2014-06-06",
+    "image": "@drawable/user4"
+  },
+  {
+    "id": 5,
+    "name": "Joko",
+    "birthdate": "2014-02-12",
+    "image": "@drawable/user5"
+  },
+  {
+    "id": 6,
+    "name": "Rafli",
+    "birthdate": "2014-04-11",
+    "image": "@drawable/user6"
+  }
+]
