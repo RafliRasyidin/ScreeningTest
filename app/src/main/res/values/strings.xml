@@ -12,4 +12,6 @@
     <string name="android">Android</string>
     <string name="ios">iOS</string>
     <string name="feature_phone">Feature Phone</string>
+    <string name="is_palindrome">isPalindrome</string>
+    <string name="not_palindrome">Not Palindrome</string>
 </resources>

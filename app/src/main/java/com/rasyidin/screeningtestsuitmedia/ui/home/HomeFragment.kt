@@ -1,7 +1,9 @@
-package com.rasyidin.screeningtestsuitmedia.ui
+package com.rasyidin.screeningtestsuitmedia.ui.home
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.rasyidin.screeningtestsuitmedia.R
 import com.rasyidin.screeningtestsuitmedia.databinding.FragmentHomeBinding
@@ -12,6 +14,8 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
+
+    private val homeViewModel: HomeViewModel by viewModels()
 
     @Inject
     lateinit var pref: AppPreference
@@ -25,9 +29,26 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 binding.etName.error = getString(R.string.name_error)
             } else {
                 binding.etName.error = null
+                determinePalindrome(homeViewModel.isPalindrome(name))
                 pref.saveNamePref(name)
                 findNavController().navigate(R.id.action_homeFragment_to_welcomeFragment)
             }
+        }
+    }
+
+    private fun determinePalindrome(isPalindrome: Boolean) {
+        if (isPalindrome) {
+            Toast.makeText(
+                requireActivity(),
+                getString(R.string.is_palindrome),
+                Toast.LENGTH_SHORT
+            ).show()
+        } else {
+            Toast.makeText(
+                requireActivity(),
+                getString(R.string.not_palindrome),
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 }
