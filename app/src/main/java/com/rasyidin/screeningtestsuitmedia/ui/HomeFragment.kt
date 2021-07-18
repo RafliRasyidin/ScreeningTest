@@ -25,9 +25,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 binding.etName.error = getString(R.string.name_error)
             } else {
                 binding.etName.error = null
-                /*val args = Bundle().apply {
-                    putString(ARGS_NAME, name)
-                }*/
                 pref.saveNamePref(name)
                 findNavController().navigate(R.id.action_homeFragment_to_welcomeFragment)
             }
