@@ -4,8 +4,9 @@
     <color name="colorPrimary">#1fb09d</color>
     <color name="colorPrimaryVariant">#1b9988</color>
     <color name="colorAccent">#f0d160</color>
-    <color name="colorAccentVariant">#fcbe7a</color>
+    <color name="colorAccentVariant">#c78740</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="btn_pressed">#1f64b0</color>
+    <color name="colorBlue">#1f64b0</color>
+    <color name="colorChip">#b6cccc</color>
 </resources>

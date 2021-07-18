@@ -8,5 +8,6 @@ data class Event(
     val id: Int,
     val name: String,
     val date: String,
+    val hashtag: List<String>,
     val image: String
 ) : Parcelable

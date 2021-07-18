@@ -37,6 +37,7 @@ class AppRepository @Inject constructor(private val remoteDataSource: GuestRemot
                 response.id,
                 response.name,
                 response.date,
+                response.hashtag,
                 response.image
             )
             listEvent.add(event)

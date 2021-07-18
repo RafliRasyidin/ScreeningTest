@@ -1,38 +1,62 @@
 [
   {
     "id": 1,
-    "name": "ABC Event",
-    "date": "01 Jan 2021",
-    "image": "@drawable/img_webinar"
+    "name": "Let Success Make The Noise",
+    "date": "Nov 09 2014",
+    "hashtag": [
+      "#nutricia",
+      "#highlight F3"
+    ],
+    "image": "@drawable/event1"
   },
   {
     "id": 2,
-    "name": "Ngoding Event",
-    "date": "02 Feb 2021",
-    "image": "@drawable/img_webinar"
+    "name": "Semangat Tahun Baru",
+    "date": "Oct 21 2014",
+    "hashtag": [
+      "#nutricia"
+    ],
+    "image": "@drawable/event2"
   },
   {
     "id": 3,
-    "name": "Android Developer Event",
-    "date": "03 Mar 2021",
-    "image": "@drawable/img_webinar"
+    "name": "Work Hard In Smile",
+    "date": "Jun 14 2014",
+    "hashtag": [
+      "#nutricia",
+      "highlight F3",
+      "event"
+    ],
+    "image": "@drawable/event3"
   },
   {
     "id": 4,
-    "name": "Webinar Android Event",
-    "date": "06 Jun 2021",
-    "image": "@drawable/img_webinar"
+    "name": "Another Message",
+    "date": "Jan 21 2014",
+    "hashtag": [
+      "#nutricia"
+    ],
+    "image": "@drawable/event4"
   },
   {
     "id": 5,
     "name": "UI/UX Event",
-    "date": "12 Jul 2021",
-    "image": "@drawable/img_webinar"
+    "date": "Jul 29 2014",
+    "hashtag": [
+      "#nutricia",
+      "#highlight F3"
+    ],
+    "image": "@drawable/event5"
   },
   {
     "id": 6,
-    "name": "Mobile Development Event",
-    "date": "11 Nov 2021",
-    "image": "@drawable/img_webinar"
+    "name": "Contest Piano",
+    "date": "Nov 11 2014",
+    "hashtag": [
+      "#nutricia",
+      "#highlight F3",
+      "event"
+    ],
+    "image": "@drawable/event1"
   }
 ]

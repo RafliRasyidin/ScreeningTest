@@ -37,11 +37,19 @@ class EventFragment : BaseFragment<FragmentEventBinding>(FragmentEventBinding::i
         subscribeToObserver()
 
         onItemClicked()
+
+        backButtonClicked()
     }
 
     private fun onItemClicked() {
         eventAdapter.onItemClickListener = { event ->
             pref.saveEventPref(event.name)
+            findNavController().navigate(R.id.action_eventFragment_to_welcomeFragment)
+        }
+    }
+
+    private fun backButtonClicked() {
+        binding.toolbarContainer.imgBack.setOnClickListener {
             findNavController().navigate(R.id.action_eventFragment_to_welcomeFragment)
         }
     }
@@ -58,7 +66,4 @@ class EventFragment : BaseFragment<FragmentEventBinding>(FragmentEventBinding::i
         setHasFixedSize(true)
     }
 
-    companion object {
-        const val EXTRA_EVENT = "extraEvent"
-    }
 }

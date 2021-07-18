@@ -3,61 +3,84 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="16dp"
+    android:layout_height="165dp"
+    android:layout_marginStart="8dp"
     android:layout_marginTop="16dp"
-    android:layout_marginEnd="16dp"
+    android:layout_marginEnd="8dp"
     android:elevation="4dp"
-    app:cardCornerRadius="15dp">
+    app:cardCornerRadius="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/img_event_container"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="10dp"
+        <ImageView
+            android:id="@+id/img_event"
+            android:layout_width="115dp"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/img_event"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                tools:ignore="ContentDescription"
-                tools:src="@color/purple_700" />
-        </com.google.android.material.card.MaterialCardView>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="ContentDescription"
+            tools:src="@color/colorPrimaryVariant" />
 
         <TextView
             android:id="@+id/tv_title_event"
-            style="@style/TextAppearance.AppCompat.Body2"
+            style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:maxLines="2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/img_event_container"
-            app:layout_constraintTop_toTopOf="@+id/img_event_container"
+            android:maxLines="1"
+            app:layout_constraintEnd_toStartOf="@+id/img_event"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="Event" />
 
         <TextView
             android:id="@+id/tv_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/img_event_container"
+            android:textColor="@color/colorAccentVariant"
+            app:layout_constraintEnd_toEndOf="@+id/tv_title_event"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_event"
             app:layout_constraintTop_toBottomOf="@+id/tv_title_event"
             tools:text="15 Sept 2021" />
+        
+        <LinearLayout
+            android:id="@+id/chip_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/tv_date"
+            app:layout_constraintStart_toStartOf="@id/tv_date"
+            app:layout_constraintEnd_toEndOf="@id/tv_title_event">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_hashtag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_desc_event"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:justificationMode="inter_word"
+            android:maxLines="5"
+            android:text="@string/dummy_desc_event"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_date"
+            app:layout_constraintStart_toStartOf="@+id/tv_date"
+            app:layout_constraintTop_toBottomOf="@id/chip_container"
+            tools:ignore="UnusedAttribute" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

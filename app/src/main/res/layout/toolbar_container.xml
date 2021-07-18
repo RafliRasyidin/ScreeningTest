@@ -1,21 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.appbar.MaterialToolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    xmlns:tools="http://schemas.android.com/tools">
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/tv_toolbar"
-            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            tools:text="Guest" />
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="start"
+        android:layout_marginEnd="16dp"
+        app:srcCompat="@drawable/ic_previous"
+        app:tint="@color/colorPrimary"
+        tools:ignore="ContentDescription" />
 
-    </com.google.android.material.appbar.MaterialToolbar>
+    <TextView
+        android:id="@+id/tv_toolbar"
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:textAllCaps="true"
+        android:maxLines="1"
+        android:textColor="@color/colorPrimary"
+        tools:text="Guest" />
 
-</com.google.android.material.appbar.AppBarLayout>
+    <ImageView
+        android:id="@+id/img_add"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:tint="@color/colorPrimary"
+        android:layout_marginEnd="16dp"
+        android:layout_gravity="end"
+        app:srcCompat="@drawable/ic_add_file"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/img_search"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:tint="@color/colorPrimary"
+        android:layout_marginEnd="16dp"
+        android:layout_gravity="end"
+        app:srcCompat="@drawable/ic_search"
+        tools:ignore="ContentDescription" />
+
+
+</com.google.android.material.appbar.MaterialToolbar>

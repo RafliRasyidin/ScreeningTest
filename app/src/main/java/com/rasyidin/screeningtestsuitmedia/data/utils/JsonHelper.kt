@@ -50,13 +50,17 @@ class JsonHelper(private val context: Context) {
             val listArray = JSONArray(parsingFileToString("event.json"))
             for (i in 0 until listArray.length()) {
                 val event = listArray.getJSONObject(i)
-
                 val id = event.getInt("id")
                 val name = event.getString("name")
                 val date = event.getString("date")
+                val hashtag = ArrayList<String>()
+                val listHashtag = event.getJSONArray("hashtag")
+                for (index in 0 until listHashtag.length()) {
+                    hashtag.add(listHashtag.getString(index))
+                }
                 val image = event.getString("image")
 
-                val eventResponse = Event(id, name, date, image)
+                val eventResponse = Event(id, name, date, hashtag, image)
                 listEvent.add(eventResponse)
             }
         } catch (e: JSONException) {
