@@ -24,3 +24,11 @@ fun String.getBirthdate(): Int {
     return outputFormat.format(date).toInt()
 }
 
+@SuppressLint("SimpleDateFormat")
+fun String.getMonth(): Int {
+    val inputString = SimpleDateFormat("yyyy-MM-dd")
+    val outputFormat = SimpleDateFormat("MM")
+    val date = inputString.parse(this)
+    return outputFormat.format(date).toInt()
+}
+

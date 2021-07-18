@@ -23,4 +23,13 @@ class GuestViewModel @Inject constructor(private val appRepository: AppRepositor
             else -> context.getString(R.string.feature_phone)
         }
     }
+
+    fun isMonthPrime(month: Int) : Boolean {
+        for (i in 2..month / 2) {
+            if (month % i == 0) {
+                return false
+            }
+        }
+        return true
+    }
 }
