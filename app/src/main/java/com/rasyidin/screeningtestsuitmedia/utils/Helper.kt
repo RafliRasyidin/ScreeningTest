@@ -16,6 +16,12 @@ fun ImageView.setImage(context: Context, image: String) {
         .into(this)
 }
 
+fun ImageView.setImageWithUrl(context: Context, imageUrl: String) {
+    Glide.with(context)
+        .load(imageUrl)
+        .into(this)
+}
+
 @SuppressLint("SimpleDateFormat")
 fun String.getBirthdate(): Int {
     val inputFormat = SimpleDateFormat("yyyy-MM-dd")

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.event.MapFragment">
+
+    <include
+        android:id="@+id/toolbar_container"
+        layout="@layout/toolbar_map_container" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_event_location"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        tools:listitem="@layout/item_event_location" />
+
+    <fragment
+        android:id="@+id/maps"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

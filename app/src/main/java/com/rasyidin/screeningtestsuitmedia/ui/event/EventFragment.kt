@@ -39,6 +39,8 @@ class EventFragment : BaseFragment<FragmentEventBinding>(FragmentEventBinding::i
         onItemClicked()
 
         backButtonClicked()
+
+        navigateToMapFragment()
     }
 
     private fun onItemClicked() {
@@ -51,6 +53,12 @@ class EventFragment : BaseFragment<FragmentEventBinding>(FragmentEventBinding::i
     private fun backButtonClicked() {
         binding.toolbarContainer.imgBack.setOnClickListener {
             findNavController().navigate(R.id.action_eventFragment_to_welcomeFragment)
+        }
+    }
+
+    private fun navigateToMapFragment() {
+        binding.toolbarContainer.imgAdd.setOnClickListener {
+            findNavController().navigate(R.id.action_eventFragment_to_mapFragment)
         }
     }
 

@@ -45,13 +45,14 @@
         <item name="cornerSize">2dp</item>
     </style>
 
-    <style name="Theme.ScreeningTestSuitmedia.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
-        <item name="android:background"  tools:ignore="NewApi">@color/white</item>
-        <item name="background">@color/white</item>
-        <item name="elevation">0dp</item>
-        <item name="android:textColorPrimary">@color/colorPrimary</item>
+    <style name="Widget.App.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar</item>
+        <item name="android:elevation">0dp</item>
     </style>
 
-    <style name="Theme.ScreeningTestSuitmedia.PopupOverlay" parent="Theme.MaterialComponents.Light" />
-
+    <style name="ThemeOverlay.App.Toolbar" parent="">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
+    </style>
 </resources>

@@ -14,7 +14,7 @@
         android:layout_gravity="start"
         android:layout_marginEnd="16dp"
         app:srcCompat="@drawable/ic_previous"
-        app:tint="@color/colorPrimary"
+        app:tint="@color/colorAccentVariant"
         tools:ignore="ContentDescription" />
 
     <TextView
@@ -25,14 +25,14 @@
         android:layout_gravity="start"
         android:textAllCaps="true"
         android:maxLines="1"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorAccentVariant"
         tools:text="Guest" />
 
     <ImageView
         android:id="@+id/img_add"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        app:tint="@color/colorPrimary"
+        app:tint="@color/colorAccentVariant"
         android:layout_marginEnd="16dp"
         android:layout_gravity="end"
         app:srcCompat="@drawable/ic_add_file"
@@ -42,7 +42,7 @@
         android:id="@+id/img_search"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        app:tint="@color/colorPrimary"
+        app:tint="@color/colorAccentVariant"
         android:layout_marginEnd="16dp"
         android:layout_gravity="end"
         app:srcCompat="@drawable/ic_search"

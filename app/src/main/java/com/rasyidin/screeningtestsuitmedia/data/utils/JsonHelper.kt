@@ -59,8 +59,11 @@ class JsonHelper(private val context: Context) {
                     hashtag.add(listHashtag.getString(index))
                 }
                 val image = event.getString("image")
+                val imageEvent = event.getString("imageEvent")
+                val lat = event.getDouble("lat")
+                val lng = event.getDouble("lng")
 
-                val eventResponse = Event(id, name, date, hashtag, image)
+                val eventResponse = Event(id, name, date, hashtag, image, imageEvent, lat, lng)
                 listEvent.add(eventResponse)
             }
         } catch (e: JSONException) {
