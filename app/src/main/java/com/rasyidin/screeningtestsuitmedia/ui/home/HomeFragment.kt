@@ -23,7 +23,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnNext.setOnClickListener {
+        binding.btnDone.setOnClickListener {
             val name = binding.etName.text.toString()
             if (name.isEmpty()) {
                 binding.etName.error = getString(R.string.name_error)

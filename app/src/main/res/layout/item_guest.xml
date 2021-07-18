@@ -16,6 +16,6 @@
         android:id="@+id/img_guest"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:src="@color/purple_700"
+        tools:src="@color/colorPrimaryVariant"
         tools:ignore="ContentDescription" />
 </com.google.android.material.card.MaterialCardView>

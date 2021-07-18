@@ -16,4 +16,8 @@
     <string name="not_palindrome">Not Palindrome</string>
     <string name="is_prime">isPrime</string>
     <string name="not_prime">Not Prime</string>
+    <string name="text_welcome">Selamat Datang!</string>
+    <string name="text_desc_photo">Sertakan gambar profil Anda untuk melengkapi profil.</string>
+    <string name="done">Selesai</string>
+    <string name="dummy_desc_event">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</string>
 </resources>
