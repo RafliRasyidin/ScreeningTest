@@ -5,10 +5,13 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.snackbar.Snackbar
 import com.rasyidin.screeningtestsuitmedia.R
+import com.rasyidin.screeningtestsuitmedia.data.model.Guest
 import com.rasyidin.screeningtestsuitmedia.databinding.FragmentGuestBinding
 import com.rasyidin.screeningtestsuitmedia.ui.adapter.GuestAdapter
 import com.rasyidin.screeningtestsuitmedia.ui.base.BaseFragment
@@ -17,9 +20,11 @@ import com.rasyidin.screeningtestsuitmedia.utils.getMonth
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class GuestFragment : BaseFragment<FragmentGuestBinding>(FragmentGuestBinding::inflate) {
+class GuestFragment : BaseFragment<FragmentGuestBinding>(FragmentGuestBinding::inflate), SwipeRefreshLayout.OnRefreshListener {
 
     private val guestViewModel: GuestViewModel by viewModels()
+
+    private lateinit var guest: List<Guest>
 
     private val guestAdapter: GuestAdapter by lazy {
         GuestAdapter()
@@ -35,6 +40,22 @@ class GuestFragment : BaseFragment<FragmentGuestBinding>(FragmentGuestBinding::i
         subscribeToObserver()
 
         onItemClicked()
+
+    }
+
+    override fun onRefresh() {
+        binding.swipeRefresh.isRefreshing = false
+        guestViewModel.saveGuest(guest)
+        loadData()
+    }
+
+    private fun loadData() {
+        lifecycleScope.launchWhenCreated {
+            guestViewModel.getAllGuest()
+            guestViewModel.guestList.observe(viewLifecycleOwner) { listGuest ->
+                guestAdapter.setData(listGuest)
+            }
+        }
     }
 
     private fun onItemClicked() {
@@ -50,6 +71,7 @@ class GuestFragment : BaseFragment<FragmentGuestBinding>(FragmentGuestBinding::i
     private fun subscribeToObserver() {
         guestViewModel.getListGuest().observe(viewLifecycleOwner) { listGuest ->
             guestAdapter.setData(listGuest)
+            guest = listGuest
         }
     }
 
@@ -57,6 +79,16 @@ class GuestFragment : BaseFragment<FragmentGuestBinding>(FragmentGuestBinding::i
         adapter = guestAdapter
         layoutManager = GridLayoutManager(requireActivity(), 2)
         setHasFixedSize(true)
+
+        binding.swipeRefresh.apply {
+            setOnRefreshListener(this@GuestFragment)
+            setColorSchemeResources(
+                R.color.colorPrimary,
+                android.R.color.holo_green_dark,
+                android.R.color.holo_orange_dark,
+                android.R.color.holo_blue_dark,
+            )
+        }
     }
 
     private fun isMonthPrime(isPrime: Boolean) {
@@ -66,4 +98,6 @@ class GuestFragment : BaseFragment<FragmentGuestBinding>(FragmentGuestBinding::i
             Snackbar.make(requireView(), getString(R.string.not_prime), Snackbar.LENGTH_SHORT).show()
         }
     }
+
+
 }

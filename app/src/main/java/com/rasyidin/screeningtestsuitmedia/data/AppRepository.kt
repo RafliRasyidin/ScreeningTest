@@ -4,10 +4,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.rasyidin.screeningtestsuitmedia.data.model.Event
 import com.rasyidin.screeningtestsuitmedia.data.model.Guest
+import com.rasyidin.screeningtestsuitmedia.data.source.GuestLocalDataSource
 import com.rasyidin.screeningtestsuitmedia.data.source.GuestRemoteDataSource
 import javax.inject.Inject
 
-class AppRepository @Inject constructor(private val remoteDataSource: GuestRemoteDataSource) {
+class AppRepository @Inject constructor(
+    private val remoteDataSource: GuestRemoteDataSource,
+    private val localDataSource: GuestLocalDataSource
+) {
 
     fun getGuest(): LiveData<List<Guest>> {
         val guestResults = MutableLiveData<List<Guest>>()
@@ -48,4 +52,8 @@ class AppRepository @Inject constructor(private val remoteDataSource: GuestRemot
         eventResults.postValue(listEvent)
         return eventResults
     }
+
+    suspend fun saveGuest(listGuest: List<Guest>) = localDataSource.saveGuest(listGuest)
+
+    suspend fun getAllGuest() = localDataSource.getAllGuest()
 }
